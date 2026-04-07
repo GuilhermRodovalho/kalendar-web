@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f9fafb;
+  --color-text: #111827;
+  --color-text-secondary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-ring: #3b82f6;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  .dark {
+    --color-bg: #111827;
+    --color-bg-secondary: #1f2937;
+    --color-text: #f9fafb;
+    --color-text-secondary: #9ca3af;
+    --color-border: #374151;
+    --color-ring: #60a5fa;
+  }
+
+  body {
+    @apply bg-bg text-text transition-colors duration-200;
+    margin: 0;
+  }
+}
